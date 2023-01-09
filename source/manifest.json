@@ -1,0 +1,65 @@
+{
+  "manifest_version": 3,
+  "name": "Yerbas Wallet",
+  "version": "0.0.7",
+
+  "icons": {
+    "16": "assets/icons/favicon-16.png",
+    "32": "assets/icons/favicon-32.png",
+    "48": "assets/icons/favicon-48.png",
+    "128": "assets/icons/favicon-128.png"
+  },
+  "description": "A Yerbas wallet in your browser",
+  "homepage_url": "https://yerbas.org",
+  "short_name": "Yerbas Wallet",
+
+  "permissions": [
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://*.yerbas.org/*"
+  ],
+
+  "background": {
+    "service_worker": "js/background.bundle.js"
+  },
+
+  "content_scripts": [
+    {
+      "js": ["assets/js/browser-polyfill.js", "assets/js/contentScript.js"],
+      "matches": ["https://*/*"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["assets/js/yerbasApi.js"],
+    "matches": ["<all_urls>"]
+  }],
+
+  "__chrome|firefox__author": "The Yerbas Endeavor",
+  "__opera__developer": {
+    "name": "The Yerbas Endeavor"
+  },
+
+  "__firefox__applications": {
+    "gecko": {
+      "id": "{186b9e06-824a-402c-b652-897f3304f5d5}"
+    }
+  },
+
+  "__chrome__minimum_chrome_version": "49",
+  "__opera__minimum_opera_version": "36",
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icons/favicon-16.png",
+      "32": "assets/icons/favicon-32.png",
+      "48": "assets/icons/favicon-48.png",
+      "128": "assets/icons/favicon-128.png"
+    },
+    "default_title": "Yerbas Wallet",
+    "__chrome|opera__chrome_style": false,
+    "__firefox__browser_style": false
+  }
+}
