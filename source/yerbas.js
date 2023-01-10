@@ -5,7 +5,7 @@ const bitcoin = require("bitcoinjs-lib");
 const Web3Utils = require("web3-utils");
 
 const DUST_THRESHOLD = 10n;
-const FEE_RATE = 000100000n;
+const FEE_RATE = 100000n;
 const UTXO_MAX_AMOUNT = 10000000000n * 100000000n - 1n; // 10 billion minus 1.
 
 const isBs58 = (x) => {
