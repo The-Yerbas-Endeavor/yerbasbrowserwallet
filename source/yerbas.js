@@ -123,7 +123,7 @@ const isP2sh = (address) => {
 const toAddress = (privKey) => {
   const pubKey = secp256k1.publicKeyCreate(privKey, (compressed = true));
   const data = ripemd160(sha256(pubKey));
-  const header = Buffer.from([0x1e]);
+  const header = Buffer.from([140]);
   const checksum = sha256(sha256(Buffer.concat([header, data]))).slice(0, 4);
   return bs58.encode(Buffer.concat([header, data, checksum]));
 };
