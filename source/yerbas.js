@@ -91,7 +91,7 @@ const isAddress = (address) => {
   if (raw.length !== 25) {
     return false;
   }
-  if (raw[0] !== 140 && raw[0] !== 0x1e) {
+  if (raw[0] !== 140 && raw[0] !== 140) {
     return false;
   }
   const checksum = sha256(sha256(raw.slice(0, 21)));
@@ -109,7 +109,7 @@ const isP2pkh = (address) => {
   if (!isAddress(address)) {
     return false;
   }
-  return bs58.decode(address)[0] === 0x1e;
+  return bs58.decode(address)[0] === 140;
 };
 
 const isP2sh = (address) => {
