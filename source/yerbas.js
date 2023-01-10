@@ -55,7 +55,7 @@ const isWif = (wif) => {
   if (raw.length !== 37 && raw.length !== 38) {
     return false;
   }
-  if (raw[0] !== 0x9e) {
+  if (raw[0] !== 128) {
     return false;
   }
   const checksum = sha256(sha256(raw.slice(0, raw.length - 4)));
@@ -64,7 +64,7 @@ const isWif = (wif) => {
 
 // Export private key to WIF.
 const toWif = (privKey) => {
-  const header = Buffer.from([0x9e]);
+  const header = Buffer.from([128]);
   const data = privKey;
   const extra = Buffer.from([0x01]);
   const checksum = sha256(sha256(Buffer.concat([header, data, extra])));
