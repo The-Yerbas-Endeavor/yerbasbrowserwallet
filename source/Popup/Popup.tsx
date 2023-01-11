@@ -290,9 +290,9 @@ const Popup: React.FC = () => {
       setSignAmount("");
       setSignData("");
       setSignPassword("");
-      setSignFee("");
-      setSignTx("");
-      setSignSendResult("");
+      setSignFee(null);
+      setSignTx(null);
+      setSignSendResult(null);
     }
   }, [signShow]);
   const doSign = async (e: any) => {
