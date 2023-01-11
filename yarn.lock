@@ -2115,7 +2115,7 @@ bip174@^2.0.1:
 
 "bitcoinjs-lib@https://github.com/The-Yerbas-Endeavor/bitcoinjs-lib.git":
   version "6.0.1"
-  resolved "https://github.com/The-Yerbas-Endeavor/bitcoinjs-lib.git#4579b15d6719ecf77f2a34f8227e81164ba56bbf"
+  resolved "https://github.com/The-Yerbas-Endeavor/bitcoinjs-lib.git#16438a7cd0545bb5d6ff0cfd526faca218dc528c"
   dependencies:
     bech32 "^2.0.0"
     bip174 "^2.0.1"
