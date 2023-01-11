@@ -39,7 +39,7 @@ const satoshiToLocaleString = (x: any) => {
   const integer = (BigInt(x) / 100000000n).toString();
   const decimal = (BigInt(x) % 100000000n).toString().padStart(8, "0");
   return (
-    (isNegative ? "-" : "") +
+    
     `${integer.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}.${decimal}`
   );
 };
