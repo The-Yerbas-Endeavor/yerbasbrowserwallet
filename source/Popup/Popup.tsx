@@ -861,7 +861,7 @@ const Popup: React.FC = () => {
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             {signTx === null
-              ? "Send Yerbass"
+              ? "Send Yerbas"
               : signSendResult === null
               ? "Confirm transaction"
               : "Transaction result"}
@@ -923,7 +923,7 @@ const Popup: React.FC = () => {
                   <Form.Label className="input-error">
                     {signDataError}
                   </Form.Label>
-                )}
+                )}   
                 <Form.Control
                   placeholder="Account password"
                   className="mt-2"
