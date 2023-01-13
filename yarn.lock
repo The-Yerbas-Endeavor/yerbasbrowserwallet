@@ -8948,3 +8948,8 @@ zip-stream@^4.1.0:
     archiver-utils "^2.1.0"
     compress-commons "^4.1.0"
     readable-stream "^3.6.0"
+
+big-integer@^1.6.51:
+   version "1.6.51"
+  resolved "https://github.com/peterolson/BigInteger.js.git#e5d2154d3c417069c51e7116bafc3b91d0b9fe41"
+ 

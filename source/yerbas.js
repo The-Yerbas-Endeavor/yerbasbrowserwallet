@@ -6,7 +6,7 @@ const Web3Utils = require("web3-utils");
 
 const DUST_THRESHOLD = 1n;
 const FEE_RATE = 100000n;
-const UTXO_MAX_AMOUNT = 10000000000n * 100000000n - 1n; // 10 billion minus 1.
+const UTXO_MAX_AMOUNT = 10000000n * 100000000n - 1n; // 10 million minus 1.
 
 const isBs58 = (x) => {
   return x.match(/^[1-9A-HJ-NP-Za-km-z]+$/);
@@ -66,7 +66,7 @@ const isWif = (wif) => {
 const toWif = (privKey) => {
   const header = Buffer.from([128]);
   const data = privKey;
-  const extra = Buffer.from([0x01]);
+//  const extra = Buffer.from([0x01]); 
   const checksum = sha256(sha256(Buffer.concat([header, data, extra])));
   return bs58.encode(
     Buffer.concat([header, data, extra, checksum.slice(0, 4)])
@@ -91,7 +91,7 @@ const isAddress = (address) => {
   if (raw.length !== 25) {
     return false;
   }
-  if (raw[0] !== 140 && raw[0] !== 140) {
+  if (raw[0] !== 140) {
     return false;
   }
   const checksum = sha256(sha256(raw.slice(0, 21)));
@@ -112,12 +112,6 @@ const isP2pkh = (address) => {
   return bs58.decode(address)[0] === 140;
 };
 
-const isP2sh = (address) => {
-  if (!isAddress(address)) {
-    return false;
-  }
-  return bs58.decode(address)[0] === 140;
-};
 
 // Create Yerbas address from secp256k1 priv key.
 const toAddress = (privKey) => {
